@@ -1,0 +1,8 @@
+{
+  "conversation_history": [
+    {
+      "role": "assistant",
+      "content": "## Day 1: July 17, 2025\n* Valid Activity @ Location $20 (15 min travel time)\n* Invalid Cost Activity @ Location $abc (10 min travel time)\n* Invalid Travel Activity @ Location $30 (not a time)\n* Another Invalid Cost @ Location $1,000.50 (2 hour travel time)\n* Missing Cost and Travel @ Location\n* Invalid Travel Format @ Location $50 (30 minutes travel time)"
+    }
+  ]
+}
