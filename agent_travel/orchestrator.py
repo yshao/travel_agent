@@ -52,13 +52,22 @@ class ItineraryEntry(BaseModel):
 
 class Orchestrator:
     def __init__(self):
+        # Load .env for local development (ignored in Docker/HF Spaces)
         load_dotenv()
+
+        # Get API key from environment (works for both local .env and HF Spaces secrets)
         gemini_api_key = os.getenv("GEMINI_API_KEY")
         if gemini_api_key:
             genai.configure(api_key=gemini_api_key)
             print(f"Gemini API key loaded: {bool(gemini_api_key)}") # Debug print
         else:
-            print("Gemini API key not found. Please set the GEMINI_API_KEY environment variable.")
+            error_msg = "⚠️ GEMINI_API_KEY not found. For HF Spaces: Add it in Settings → Repository secrets"
+            print(error_msg)
+            # Display error in Streamlit if available
+            try:
+                st.error(error_msg)
+            except:
+                pass
         self.travel_planner_agent = TravelPlannerAgent()
         self.airbnb_agent = AirbnbAgent()
 

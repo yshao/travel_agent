@@ -1,0 +1,58 @@
+# Environment variables and secrets - CRITICAL: Never include in Docker image
+.env
+*.env
+.env.*
+!.env.example
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+*.cover
+*.log
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific - user data and temp files
+user_trips.json
+state_output.json
+*.bk
+app.py.bk
+
+# Documentation (except README for HF)
+*.md
+!README.md
+
+# Build and test files
+Makefile
+example/
+.github/
+
+# Test data (exclude, but keep test_*.json for validation)
+.pytest_cache/
